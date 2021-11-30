@@ -15,6 +15,9 @@ I am going to edit the same part as well, moooahahahah!
 Assignment: 
 
 Use Bootstrap to create a gallery of things to sell (you can use any version of bootstrap)
+
 Allow the user to select as many as they want and then click "Purchase"
+
 On a separate page, a manager can go in an see the list of orders and check off when one is complete
+
 If you need/want a remote data store (optional) I can set one up for you

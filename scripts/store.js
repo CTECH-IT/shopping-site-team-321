@@ -20,6 +20,15 @@
         this.dataBase.remove(customerId);
     }
 
+    Store.prototype.printOrders = function () {
+        let customerIdArray = Object.keys(this.dataBase.getAll());
+
+        console.log('Store #' + this.storeId + ' has pending orders:');
+
+        customerIdArray.forEach(function (id) {
+            console.log(this.dataBase.get(id));
+        }.bind(this))}
+
     App.Store = Store;
 
     window.App = App;
