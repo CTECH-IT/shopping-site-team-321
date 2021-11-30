@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Shopping Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <meta name="author" content="Brianna Elizabeth">
 </head>
-<body>
-    <h1>Some text because I want something to look at, not just this barren waste land of a blank page.</h1>
+<body class="container">
+    <header>
+        <h1>Shopping Site</h1>
+    </header>
+    <section>
+        <div class="card card-default">
+            <div class="card-body">
+                <form data-shopping-order="form">
+                    <!---Not going to have it be free input. Give options, like shoes, milk, etc.-->
+                    <div class="form-group">
+                        <label for="shoppingOrder">Shopping Order</label>
+                        <input class="form-control" name="shopping" id="shoppingOrder" placeholder="What Would You Like?" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="abc@company.com">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
