@@ -15,12 +15,54 @@
             <div class="card-body">
                 <form data-shopping-order="form">
                     <!---Not going to have it be free input. Give options, like shoes, milk, etc.-->
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="shoppingOrder">Shopping Order</label>
                         <input class="form-control" name="shopping" id="shoppingOrder" placeholder="What Would You Like?" autofocus>
+                    </div> --->
+                    <p class="text-left font-weight-bold">Place Your Order!</p>
+                    <div class="d-flex flex-row items-list">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="item" value="T-Shirt">
+                                <img class="img-responsive" style="max-width:150px" src="images/TShirt.jpg" alt="T-Shirt">
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="item" value="Pants">
+                                <img class="img-responsive" style="max-width:150px" src="images/Pants.jpg" alt="Pants">
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="item" value="Skirt">
+                                <img class="img-responsive" style="max-width:150px" src="images/Skirt.jpg" alt="Skirt">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="text-left font-weight-bold">What Color Would You Like?</p>
+                    <div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Red">
+                                Red
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Green">
+                                Green
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Purple">
+                                Purple
+                            </label>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="emailInput">Email</label>
+                        <label class="font-weight-bold" for="emailInput">Email</label>
                         <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="abc@company.com">
                     </div>
                 </form>
