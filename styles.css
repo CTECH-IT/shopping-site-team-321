@@ -1,0 +1,7 @@
+@media all and (orientation: landscape){
+    
+    #items-list {
+        flex-direction: column;
+    }
+
+}

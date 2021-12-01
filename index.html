@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Shopping Site</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="css" href="styles.css">
     <meta name="author" content="Brianna Elizabeth">
 </head>
 <body class="container">
@@ -20,7 +21,7 @@
                         <input class="form-control" name="shopping" id="shoppingOrder" placeholder="What Would You Like?" autofocus>
                     </div> --->
                     <p class="text-left font-weight-bold">Place Your Order!</p>
-                    <div class="d-flex flex-row items-list">
+                    <div class="d-flex flex-row" id="items-list">
                         <div class="radio">
                             <label>
                                 <input type="radio" name="item" value="T-Shirt">
@@ -41,25 +42,47 @@
                         </div>
                     </div>
                     <p class="text-left font-weight-bold">What Color Would You Like?</p>
-                    <div>
+                    <div class="d-flex flex-row">
                         <div class="radio">
                             <label>
                                 <input type="radio" name="color" value="Red">
-                                Red
+                                <img class="img-responsive" style="max-width:150px" src="images/Red.jpg" alt="Red">
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Orange">
+                                <img class="img-responsive" style="max-width:150px" src="images/Orange.jpg" alt="Orange">
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Yellow">
+                                <img class="img-responsive" style="max-width:150px" src="images/Yellow.jpg" alt="Yellow">
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="color" value="Green">
-                                Green
+                                <img class="img-responsive" style="max-width:150px" src="images/Green.jpg" alt="Green">
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="color" value="Blue">
+                                <img class="img-responsive" style="max-width:150px" src="images/Blue.jpg" alt="Blue">
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="color" value="Purple">
-                                Purple
+                                <img class="img-responsive" style="max-width:150px" src="images/Purple.jpg" alt="Purple">
                             </label>
                         </div>
+                    </div>
+                    <div class="form-group font-weight-bold">
+                        <label for="size">What Size Would You Like?</label>
+                        <input name="size" id="sizeLevel" type="range" class="form-control-range" value="50">
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold" for="emailInput">Email</label>

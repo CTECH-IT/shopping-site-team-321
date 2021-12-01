@@ -16,7 +16,7 @@ Assignment:
 
 Use Bootstrap to create a gallery of things to sell (you can use any version of bootstrap)
 
-Pictures must be in a fallery format with multiple columns on desktop and a single column on mobile
+Pictures must be in a gallery format with multiple columns on desktop and a single column on mobile
 
 Allow the user to select as many as they want and then click "Purchase"
 
