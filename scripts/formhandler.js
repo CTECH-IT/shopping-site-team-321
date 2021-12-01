@@ -31,6 +31,18 @@
         });
     }
 
+    FormHandler.prototype.addInputHandler = function (func) {
+        console.log("Setting input handler for form...");
+        this.$formEement.on('input', '[name="emailAddress"]', function (event) {
+            let emailAddress = event.target.value;
+            if (func(emailAddress) == true) {
+                event.target.setCustomValidity('');
+            } else {
+                event.target.setCustomValidity('Sorry, ' + emailAddress + ' is not a valid email address.')
+            }
+        });
+    };
+
     App.FormHandler = FormHandler;
     window.App = App;
 
