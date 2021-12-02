@@ -1,7 +1,7 @@
 (function (window) {
     'use strict';
 
-    const FORM_SELECTOR = '[data-coffee-order= "form"]'
+    const FORM_SELECTOR = '[data-shopping-order="form"]';
 
     let App = window.App;
     let Store = App.Store;
@@ -11,12 +11,12 @@
 
     let myStore = new Store('1234', new DataStore());
 
-    formHandler.addInputHandler(Validation.isCompanyEmail);
-
-    window.myStore = myStore;
-
     let formHandler = new FormHandler(FORM_SELECTOR);
     formHandler.addSubmitHandler(myStore.createOrder.bind(myStore));
     console.log(formHandler);
+
+    formHandler.addInputHandler(Validation.isCompanyEmail);
+
+    window.myStore = myStore;
 
 })(window);
