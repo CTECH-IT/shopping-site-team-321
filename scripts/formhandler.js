@@ -28,6 +28,9 @@
             });
             console.log(data);
             func(data);
+
+            this.reset(); // reset the form 
+            this.element[0].focus(); // focus on the first field 
         });
     }
 
