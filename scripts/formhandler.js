@@ -10,7 +10,7 @@
         }
 
         // find the "selector" in the DOM using jQuery and assign it to this.formElement
-        this.$formEement = $(selector);
+        this.$formElement = $(selector);
         if (this.$formElement.length == 0) {
             throw new Error('Could not find element with selector: ' + selector);
         } 
@@ -22,7 +22,7 @@
             event.preventDefault();
 
             let data = {};
-            $(this).serialArray().forEach(function (item) {
+            $(this).serializeArray().forEach(function (item) {
                 data[item.name] = item.value;
                 console.log(item.name + ' is ' + item.value); 
             });
@@ -30,13 +30,13 @@
             func(data);
 
             this.reset(); // reset the form 
-            this.element[0].focus(); // focus on the first field 
+            this.elements[0].focus(); // focus on the first field 
         });
     }
 
     FormHandler.prototype.addInputHandler = function (func) {
         console.log("Setting input handler for form...");
-        this.$formEement.on('input', '[name="emailAddress"]', function (event) {
+        this.$formElement.on('input', '[name="emailAddress"]', function (event) {
             let emailAddress = event.target.value;
             if (func(emailAddress) == true) {
                 event.target.setCustomValidity('');
