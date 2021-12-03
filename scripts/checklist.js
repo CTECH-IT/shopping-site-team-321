@@ -55,12 +55,11 @@ CheckList.prototype.removeRow = function (email) {
         });
 
         let description = coffeeOrder.size + ' ';
-        if (coffeeOrder.flavor) {
-            description += coffeeOrder.flavor + ' ';
+        if (coffeeOrder.color) {
+            description += coffeeOrder.color + ' ';
         }
-        description += coffeeOrder.coffee + ', ';
+        description += coffeeOrder.item + ', ';
         description += ' (' + coffeeOrder.emailAddress + ')';
-        description += ' [' + coffeeOrder.Strength + 'x]';
 
         $label.append($checkbox);
         $label.append(description);

@@ -17,10 +17,10 @@
     let formHandler = new FormHandler(FORM_SELECTOR);
 
      //when a checkbox is clicked, call "DeliverOrder" on myTruck
-     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
+     checkList.addClickHandler(myStore.deliverOrder.bind(myStore));
 
      formHandler.addSubmitHandler(function (data) {
-        myTruck.createOrder.call(myTruck, data);
+        myStore.createOrder.call(myStore, data);
         checkList.addRow.call(checkList, data);
     });
 
