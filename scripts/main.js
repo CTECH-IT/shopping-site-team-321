@@ -2,18 +2,27 @@
     'use strict';
 
     const FORM_SELECTOR = '[data-shopping-order="form"]';
+    const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
 
     let App = window.App;
     let Store = App.Store;
     let DataStore = App.DataStore;
     let Validation = App.Validation;
     let FormHandler = App.FormHandler;
+    let CheckList = App.CheckList;
 
     let myStore = new Store('1234', new DataStore());
+    let checkList = new CheckList(CHECKLIST_SELECTOR);
 
     let formHandler = new FormHandler(FORM_SELECTOR);
-    formHandler.addSubmitHandler(myStore.createOrder.bind(myStore));
-    console.log(formHandler);
+
+     //when a checkbox is clicked, call "DeliverOrder" on myTruck
+     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
+
+     formHandler.addSubmitHandler(function (data) {
+        myTruck.createOrder.call(myTruck, data);
+        checkList.addRow.call(checkList, data);
+    });
 
     formHandler.addInputHandler(Validation.isCompanyEmail);
 
