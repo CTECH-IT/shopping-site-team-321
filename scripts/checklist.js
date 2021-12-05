@@ -21,15 +21,15 @@
     }
 
 //the method that adds a new row to the checklist 
-CheckList.prototype.addRow = function (coffeeOrder) {
+CheckList.prototype.addRow = function (shoppingOrder) {
     //create a new instance of a row, using the coffee order info 
 
     //r4empove the existing rows that match the email adress
-    this.removeRow(coffeeOrder.emailAddress);
+    this.removeRow(shoppingOrder.emailAddress);
 
-    console.log(coffeeOrder);
+    console.log(shoppingOrder);
 
-    var rowElement = new Row(coffeeOrder);
+    var rowElement = new Row(shoppingOrder);
     //add a new row instance's $element property to the checklist 
     this.$element.append(rowElement.$element);
 }
@@ -42,7 +42,7 @@ CheckList.prototype.removeRow = function (email) {
 };
 
 
-    function Row(coffeeOrder) {
+    function Row(shoppingOrder) {
         let $div = $('<div></div>', {
             'data-coffee-order': 'checkbox',
             'class': 'checkbox'
@@ -51,15 +51,15 @@ CheckList.prototype.removeRow = function (email) {
 
         let $checkbox = $('<input></input>', {
             type: 'checkbox',
-            value: coffeeOrder.emailAddress
+            value: shoppingOrder.emailAddress
         });
 
-        let description = coffeeOrder.size + ' ';
-        if (coffeeOrder.color) {
-            description += coffeeOrder.color + ' ';
+        let description = 'Size ' + shoppingOrder.size + ' ';
+        if (shoppingOrder.color) {
+            description += shoppingOrder.color + ' ';
         }
-        description += coffeeOrder.item + ', ';
-        description += ' (' + coffeeOrder.emailAddress + ')';
+        description += shoppingOrder.item + ', ';
+        description += ' (' + shoppingOrder.emailAddress + ')';
 
         $label.append($checkbox);
         $label.append(description);
