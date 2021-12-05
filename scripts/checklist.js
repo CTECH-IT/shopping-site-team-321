@@ -43,6 +43,7 @@ CheckList.prototype.removeRow = function (email) {
 
 
     function Row(shoppingOrder) {
+        if (shoppingOrder.item1 || shoppingOrder.item2 || shoppingOrder.item3 || shoppingOrder.item4 || shoppingOrder.item5 || shoppingOrder.item6) {
         let $div = $('<div></div>', {
             'data-coffee-order': 'checkbox',
             'class': 'checkbox'
@@ -100,7 +101,9 @@ CheckList.prototype.removeRow = function (email) {
         $div.append($label);
 
         this.$element = $div;
-
+    } else {
+        console.log("Please Select A Clothing Item");
+    };
     }
 
     App.CheckList = CheckList;
