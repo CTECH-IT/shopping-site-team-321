@@ -21,8 +21,12 @@
         this.$formElement.on('submit', function(event) {
             event.preventDefault();
 
+            //Need to figure out a way to allow multiple values in an array
+            //item.value needs to be an array, then have something that goes into that multiple times? It's an array within an array
             let data = {};
             $(this).serializeArray().forEach(function (item) {
+                //Items getting over written
+                console.log(item.name)
                 data[item.name] = item.value;
                 console.log(item.name + ' is ' + item.value); 
             });

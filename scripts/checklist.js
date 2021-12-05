@@ -54,11 +54,45 @@ CheckList.prototype.removeRow = function (email) {
             value: shoppingOrder.emailAddress
         });
 
+        console.log(shoppingOrder);
+
         let description = 'Size ' + shoppingOrder.size + ' ';
         if (shoppingOrder.color) {
             description += shoppingOrder.color + ' ';
         }
-        description += shoppingOrder.item + ', ';
+
+        if (shoppingOrder.item1) {
+            description += shoppingOrder.item1 + ', ';
+        };
+
+        if (shoppingOrder.item2) {
+            description += shoppingOrder.item2 + ', ';
+        };
+
+        if (shoppingOrder.item3) {
+            description += shoppingOrder.item3 + ', ';
+        };
+
+        if (shoppingOrder.item4) {
+            description += shoppingOrder.item4 + ', ';
+        };
+
+        if (shoppingOrder.item5) {
+            description += shoppingOrder.item5 + ', ';
+        };
+
+        if (shoppingOrder.item6) {
+            description += shoppingOrder.item6 + ', ';
+        };
+
+        //ASK ABOUT THIS - Concatenates, but only as a string, won't treat as actual code.
+        // for (let i = 1; i <= 6; i++) {
+        //     let itemCnt = "item" + i;
+        //     let itemOrder = "shoppingOrder." + itemCnt;
+        //     description += itemOrder + ', ';
+        //   }
+        
+
         description += ' (' + shoppingOrder.emailAddress + ')';
 
         $label.append($checkbox);

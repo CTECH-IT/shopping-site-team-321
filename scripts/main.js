@@ -2,7 +2,7 @@
     'use strict';
 
     const FORM_SELECTOR = '[data-shopping-order="form"]';
-    const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
+    const CHECKLIST_SELECTOR = '[data-shopping-order="checklist"]';
 
     let App = window.App;
     let Store = App.Store;
