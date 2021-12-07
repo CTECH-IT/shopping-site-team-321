@@ -1,3 +1,7 @@
 form :focus:required:invalid {
     border-color: red;
 }
+
+body {
+    background-color: darkviolet;
+  }
