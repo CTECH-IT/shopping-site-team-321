@@ -35,3 +35,7 @@
     window.myStore = myStore;
 
 })(window);
+
+function change_page(){
+    window.location.href = "manager.html";
+  };
