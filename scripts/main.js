@@ -16,8 +16,8 @@
     //The remote database where orders are stored
     let remoteDS = new RemoteDataStore(SERVER_URL);
 
-    //let myStore = new Store('1234', new DataStore());
-    let myStore = new Store('1234', remoteDS);
+    let myStore = new Store('1234', new DataStore());
+    //let myStore = new Store('1234', remoteDS);
     let checkList = new CheckList(CHECKLIST_SELECTOR);
 
     let formHandler = new FormHandler(FORM_SELECTOR);
@@ -28,6 +28,7 @@
      formHandler.addSubmitHandler(function (data) {
         myStore.createOrder.call(myStore, data);
         checkList.addRow.call(checkList, data);
+
     });
 
     formHandler.addInputHandler(Validation.isCompanyEmail);
@@ -38,4 +39,6 @@
 
 function change_page(){
     window.location.href = "manager.html";
+    sessionStorage.getItem('Order')
   };
+  
