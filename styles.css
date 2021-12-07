@@ -1,5 +1,5 @@
 form :focus:required:invalid {
-    border-color: red;
+    border-color: green;
 }
 
 body {
