@@ -28,7 +28,6 @@
      formHandler.addSubmitHandler(function (data) {
         myStore.createOrder.call(myStore, data);
         checkList.addRow.call(checkList, data);
-
     });
 
     formHandler.addInputHandler(Validation.isCompanyEmail);
