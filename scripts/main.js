@@ -14,12 +14,19 @@
     let FormHandler = App.FormHandler;
     let CheckList = App.CheckList;
 
+    //Runs when the manager page goes up- how to change that?
+    // let localStorageClear = false;
+    // if (!localStorageClear) {
+    //     localStorage.clear()
+    //     localStorageClear = true;
+    // };
+
     //The remote database where orders are stored
     let remoteDS = new RemoteDataStore(SERVER_URL);
 
-    let myStore = new Store('1234', new LocalDataStore());
+    //let myStore = new Store('1234', new LocalDataStore());
     //let myStore = new Store('1234', new DataStore());
-    //let myStore = new Store('1234', remoteDS);
+    let myStore = new Store('1234', remoteDS);
     let checkList = new CheckList(CHECKLIST_SELECTOR);
 
     let formHandler = new FormHandler(FORM_SELECTOR);
