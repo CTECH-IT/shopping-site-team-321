@@ -28,13 +28,13 @@ CheckList.prototype.addRow = function (shoppingOrder) {
     this.removeRow(shoppingOrder.emailAddress);
     //localStorage.removeItem(shoppingOrder.emailAddress, shoppingOrder);
 
-    console.log(shoppingOrder);
-
     //Sets the item in local storage. Maybe give each order a unique order "number" so there can multiple orders from the same email?
     //Need to figure out how to change it to a new number each time after a submit.
-    let orderNumber = 0;
-    orderNumber += 1;
-    localStorage.setItem("Order " + orderNumber, JSON.stringify(shoppingOrder));
+    //Maybe the manager page is where the localStorage gets cleared? Has a clear all option.
+    //Whenever an order's checkbox gets clicked, it removes it from lovalstorage?
+    //let orderNumber = 0;
+    //orderNumber += 1;
+    //localStorage.setItem("Order " + orderNumber, JSON.stringify(shoppingOrder));
     var rowElement = new Row(shoppingOrder);
     //add a new row instance's $element property to the checklist 
     this.$element.append(rowElement.$element);

@@ -1,3 +1,5 @@
+let orderEmailAddress = "";
+
 (function (window) {
     'use strict';
 
@@ -15,6 +17,9 @@
             throw new Error('Could not find element with selector: ' + selector);
         } 
     }
+    
+    let data = {};
+    console.log(data);
 
     FormHandler.prototype.addSubmitHandler = function (func) {
         console.log('Setting the submit handler for the form...');
@@ -23,7 +28,7 @@
 
             //Need to figure out a way to allow multiple values in an array
             //item.value needs to be an array, then have something that goes into that multiple times? It's an array within an array
-            let data = {};
+
             $(this).serializeArray().forEach(function (item) {
                 //Items getting over written
                 console.log(item.name)
@@ -42,6 +47,7 @@
         console.log("Setting input handler for form...");
         this.$formElement.on('input', '[name="emailAddress"]', function (event) {
             let emailAddress = event.target.value;
+            orderEmailAddress = event.target.value;
             if (func(emailAddress) == true) {
                 event.target.setCustomValidity('');
             } else {
