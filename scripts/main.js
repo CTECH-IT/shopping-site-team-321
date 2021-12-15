@@ -54,4 +54,15 @@ function change_page(){
     window.open("manager.html", '_blank');
     sessionStorage.getItem('Order')
   };
+
+  function update_page(){
+    window.jQuery.get('http://saturn.rochesterschools.org:8080/json', function(data) {
+        //This is where I have to parse out the "FashionBoutique" data 
+        //Add a click handler to each entry
+        //The final step is writing the inner html with the finished content.
+        let readableData = JSON.stringify(data);
+        document.getElementById("checklist").innerHTML = readableData;
+    })
+       
+  };
   
