@@ -29,6 +29,18 @@
             console.log(this.dataBase.get(id));
         }.bind(this))}
 
+        Store.prototype.updatePage = function (Url) {
+            window.jQuery.get(Url, function(data) {
+                //This is where I have to parse out the "FashionBoutique" data 
+                //Add a click handler to each entry
+                //The final step is writing the inner html with the finished content.
+                //let readableData = JSON.stringify(data);
+                //document.getElementById("checklist").innerHTML = readableData;
+                document.getElementById("checklist").innerHTML = data;
+                return (data);
+            })
+        };
+
     App.Store = Store;
 
     window.App = App;
