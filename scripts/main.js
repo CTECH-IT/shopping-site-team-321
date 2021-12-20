@@ -72,8 +72,17 @@ function change_page(){
                 //console.log(data[key].emailAddress);
                 //console.log(data[key].item1);
                 //managerRowData = managerRowData + data[key];
+                
+                //This doesn't overwrite the data
+            let newArray = [];
+            newArray.push(data[key].emailAddress);
+            console.log(newArray);
             }
             Row(data);
+
+            // Object.keys(data).forEach(key => {
+            //     new Row(data);
+            //});
         });
 
     })   
@@ -149,10 +158,13 @@ function change_page(){
     //description = cb_type + cb_id + cb_name + cb_value + shoppingOrder[key];
 
     console.log(typeof description);
-    //let finalDescription = '<input type = "checkbox" id="checklist" name="checklist" value =' + description + '>';
+    let finalDescription = '<input type = "checkbox" id="checklist" name="checklist" value =' + description + '>';
+    let labelDescription = '<label id="checklist" name="checklist">' + description + '</label>'
 
-    document.getElementById("checklist").innerHTML = description;
+    document.getElementById("checklist").innerHTML = finalDescription + labelDescription;
 
+    //Need to delete HTML once it's been clicked (it looks like click handler is already working though?)
+    
 }
 
 });
