@@ -129,6 +129,10 @@ function change_page(){
     window.open("manager.html", '_blank');
     sessionStorage.getItem('Order')
   };
+  
+  function update_page() {
+    document.location.reload();
+  }
 
 //   function update_page(){
 //     window.jQuery.get('http://saturn.rochesterschools.org:8080/json', function(data) {
