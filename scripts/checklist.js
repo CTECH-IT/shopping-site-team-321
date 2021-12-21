@@ -39,6 +39,11 @@ CheckList.prototype.addRow = function (shoppingOrder) {
     var rowElement = new Row(shoppingOrder);
     //add a new row instance's $element property to the checklist 
     this.$element.append(rowElement.$element);
+    Object.entries(this.$element).forEach((field) => {
+        const [k, v] = field;
+        console.log("Dumping the field information " + field);
+        //console.log(`----- ${k}: ${v}`);
+      });
 }
 
 CheckList.prototype.removeRow = function (email) {
@@ -48,10 +53,14 @@ CheckList.prototype.removeRow = function (email) {
     .remove();
 };
 
+//shoppingOrder.color && (shoppingOrder.item1 || shoppingOrder.item2 || shoppingOrder.item3 || shoppingOrder.item4 || shoppingOrder.item5 || shoppingOrder.item6)
 
     function Row(shoppingOrder) {
-        if (shoppingOrder.item1 || shoppingOrder.item2 || shoppingOrder.item3 || shoppingOrder.item4 || shoppingOrder.item5 || shoppingOrder.item6) {
-        let $div = $('<div></div>', {
+        console.log("Entering shopping order with " + shoppingOrder);
+        console.log("Checking for color " + shoppingOrder.size);
+        if (shoppingOrder.storeName == "fashionBoutique" && (shoppingOrder.item1 || shoppingOrder.item2 || shoppingOrder.item3 || shoppingOrder.item4 || shoppingOrder.item5 || shoppingOrder.item6)) {
+            console.log("Verifying an item exists");
+            let $div = $('<div></div>', {
             'data-shopping-order': 'checkbox',
             'class': 'checkbox'
         });
@@ -100,14 +109,18 @@ CheckList.prototype.removeRow = function (email) {
         //     description += itemOrder + ', ';
         //   }
         
+        if (shoppingOrder.storeName) {
 
-        description += ' (' + shoppingOrder.emailAddress + ')';
+            description += ' (' + shoppingOrder.emailAddress + ')';
 
-        $label.append($checkbox);
-        $label.append(description);
-        $div.append($label);
+            $label.append($checkbox);
+            $label.append(description);
+            $div.append($label);
+    
+            this.$element = $div;
 
-        this.$element = $div;
+        }
+
     } else {
         console.log("Please Select A Clothing Item");
     };

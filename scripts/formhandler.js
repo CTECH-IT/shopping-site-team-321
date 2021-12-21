@@ -32,7 +32,9 @@ let orderEmailAddress = "";
             $(this).serializeArray().forEach(function (item) {
                 //Items getting over written
                 console.log(item.name)
+                let storeName = "fashionBoutique";
                 data[item.name] = item.value;
+                data["storeName"] = storeName;
                 console.log(item.name + ' is ' + item.value); 
             });
             console.log(data);
